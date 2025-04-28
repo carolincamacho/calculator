@@ -1,5 +1,6 @@
 from flask import Flask, request
 from operaciones import sumar, restar, dividir, multiplicar
+from _random import *
 
 app = Flask(__name__)
 
@@ -29,19 +30,24 @@ def suma():
             '''
 
 @app.route("/resta")
-def resta(num1,num2):
+def resta():
+    num1=float (input ("favor entregar primer numero: "))
+    num2=float (input ("favor entregar segundo numero: "))
     if num1 is None or num2 is None:
         return "faltan datos"
-    return f"<p>la resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</p>"
+    return f"<p>la resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
+            '''
 
 @app.route("/divide")
 def divide(num1,num2):
     if num1 is None or num2 is None:
         return "faltan datos"
-    return f"<p>la division de los numeros {num1} y {num2} es: {dividir(num1,num2)}</p>"
+    return f"<p>la division de los numeros {num1} y {num2} es: {dividir(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
+            '''
 
 @app.route("/multiplica")
 def multiplica(num1,num2):
     if num1 is None or num2 is None:
         return "faltan datos"
-    return f"<p>la multiplicación de los numeros {num1} y {num2} es: {multiplicar(num1,num2)}</p>"
+    return f"<p>la multiplicación de los numeros {num1} y {num2} es: {multiplicar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
+            '''
