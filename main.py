@@ -1,36 +1,47 @@
 from flask import Flask, request
-from operaciones import sumar
+from operaciones import sumar, restar, dividir, multiplicar
 
 app = Flask(__name__)
 
 @app.route("/")
 def home ():
-    return
-'''
-<h3> Proyecto Aplicacion Web con Flask </h3>
+    return '''
+        <h1> Proyecto Aplicacion Web con Flask </h1>
 
-<h2> Calculadora Sencilla</h2>
+        <h2> Calculadora Sencilla</h2>
 
-<p>Selecciona la operación que desees realizar:</p>
-<ul>
-    <li><a href="/suma"> Opción para Sumar </a></li>
-    <li><a href="/resta"> Opción para Restar </a></li>
-    <li><a href="/dividir"> Opción para Dividir </a></li>
-    <li><a href="/nultiplicar"> Opción para Multiplicar </a></li>
-</ul>
-<p><a href="/"> Volver </a></p>
-
-'''
+        <p>Selecciona la operación que desees realizar:</p>
+        <ul>
+            <li><a href="/suma?num1&num2"> Opción para Sumar </a></li>
+            <li><a href="/resta?num1&num2""> Opción para Restar </a></li>
+            <li><a href="/divide?num1&num2""> Opción para Dividir </a></li>
+            <li><a href="/nultiplica?num1&num2""> Opción para Multiplicar </a></li>
+        </ul>
+    '''
 
 @app.route("/suma")
 def suma():
     num1=float (input ("favor entregar primer numero: "))
     num2=float (input ("favor entregar segundo numero: "))
-    num1=request.args.get("num1", type=float)
-    num2=request.args.get("num2", type=float)
     if num1 is None or num2 is None:
         return "faltan datos"
-    return f"la suma de los numeros es: {sumar(num1,num2)}"
-    '''
-    <p><a href="/"> Volver </a></p>
-    '''
+    return f"<p>la suma de los numeros {num1} y {num2} es: {sumar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
+            '''
+
+@app.route("/resta")
+def resta(num1,num2):
+    if num1 is None or num2 is None:
+        return "faltan datos"
+    return f"<p>la resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</p>"
+
+@app.route("/divide")
+def divide(num1,num2):
+    if num1 is None or num2 is None:
+        return "faltan datos"
+    return f"<p>la division de los numeros {num1} y {num2} es: {dividir(num1,num2)}</p>"
+
+@app.route("/multiplica")
+def multiplica(num1,num2):
+    if num1 is None or num2 is None:
+        return "faltan datos"
+    return f"<p>la multiplicación de los numeros {num1} y {num2} es: {multiplicar(num1,num2)}</p>"
