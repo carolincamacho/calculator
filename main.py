@@ -1,6 +1,6 @@
 from flask import Flask, request
 from operaciones import sumar, restar, dividir, multiplicar
-from random import *
+import random
 
 app = Flask(__name__)
 
@@ -22,8 +22,8 @@ def home ():
 
 @app.route("/suma")
 def suma():
-    num1=random()
-    num2=random()
+    num1=random.randint(1,1000000)
+    num2=random.randint(1,1000000)
     if num1 is None or num2 is None:
         return "faltan datos"
     return f"<p>la suma de los numeros {num1} y {num2} es: {sumar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
@@ -31,8 +31,8 @@ def suma():
 
 @app.route("/resta")
 def resta():
-    num1=random()
-    num2=random()
+    num1=random.randint(1,1000000)
+    num2=random.randint(1,1000000)
     if num1 is None or num2 is None:
         return "faltan datos"
     return f"<p>la resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
@@ -40,8 +40,8 @@ def resta():
 
 @app.route("/divide")
 def divide():
-    num1=random()
-    num2=random()
+    num1=random.randint(1,1000000)
+    num2=random.randint(1,1000000)
     if num1 is None or num2 is None:
         return "faltan datos"
     return f"<p>la division de los numeros {num1} y {num2} es: {dividir(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
@@ -49,8 +49,8 @@ def divide():
 
 @app.route("/multiplica")
 def multiplica():
-    num1=random()
-    num2=random()
+    num1=random.randint(1,1000000)
+    num2=random.randint(1,1000000)
     if num1 is None or num2 is None:
         return "faltan datos"
     return f"<p>la multiplicación de los numeros {num1} y {num2} es: {multiplicar(num1,num2)}</p>" ''' <p><a href=/> Volver </a></p> 
