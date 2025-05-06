@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
     <style>
-        a:link, a:visited {
-        color: #0c247a;
-        text-decoration: none;
-    }
+        a:link{
+            color: hsl(227, 100%, 3%);
+            text-decoration:underline;
+        };
+        a:visited {
+            color: hsl(227, 95%, 29%);
+            text-decoration: none;
+        }
     </style>
 </head>
-<body style="background-color: rgb(34, 154, 187);">
-    <h1 style=" color: rgb(0, 255, 191);"> Proyecto Aplicacion Web con Flask </h1>
-    <h2>Calculadora Sencilla</h2>
-    <p>Selecciona la operación que desees realizar:</p>
+<body style="background-color: rgb(58, 164, 194);">
+    <h1 style=" color: rgb(247, 252, 251);"> Proyecto Aplicacion Web con Flask </h1>
+    <h2 style=" color: hsl(227, 95%, 29%);">Calculadora Sencilla</h2>
+    <p style=" color: rgb(8, 8, 8);">Selecciona la operación que desees realizar:</p>
     <ul>
-        <li style="color:blueviolet"><a style="text-decoration: none;" href="/suma?num1&num2">Opción para Sumar</a></li>
-        <li><a href="/resta?num1&num2">Opción para Restar</a></li>
-        <li><a href="/divide?num1&num2">Opción para Dividir</a></li>
-        <li><a href="/multiplica?num1&num2">Opción para Multiplicar</a></li>
+        <li style="color:rgb(3, 87, 55)"><a href="/suma?num1&num2">Opción para Sumar</a></li>
+        <li style="color:rgb(3, 87, 55)"><a href="/resta?num1&num2">Opción para Restar</a></li>
+        <li style="color:rgb(3, 87, 55)"><a href="/divide?num1&num2">Opción para Dividir</a></li>
+        <li style="color:rgb(3, 87, 55)"><a href="/multiplica?num1&num2">Opción para Multiplicar</a></li>
     </ul>
     <!--comentario-->
 </body>

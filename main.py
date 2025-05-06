@@ -11,12 +11,7 @@ def home ():
 
 @app.route("/suma")
 def suma():
-    num1=random.randint(1,1000000)
-    num2=random.randint(1,1000000)
-    if num1 is None or num2 is None:
-        return "faltan datos"
-    return f"<p><h2> La suma de los numeros {num1} y {num2} es: {sumar(num1,num2)}</h2></p>" ''' <p><a href=/><h2> Volver </h2></a></p> 
-            '''
+    return render_template('suma.html')
 
 @app.route("/resta")
 def resta():
@@ -24,9 +19,10 @@ def resta():
     num2=random.randint(1,1000000)
     if num1 is None or num2 is None:
         return "faltan datos"
-    return f"<p><h2>Para la resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</h2></p>" ''' <p><a href=/><h2> Volver </h2></a></p> 
-            '''
-
+    resultado=restar(num1,num2)
+    return render_template("resta.html",resultado=resultado,num1=num1, num2=num2)
+    #return f"<p><h2>La resta de los numeros {num1} y {num2} es: {restar(num1,num2)}</h2></p>"
+    
 @app.route("/divide")
 def divide():
     num1=random.randint(1,1000000)
